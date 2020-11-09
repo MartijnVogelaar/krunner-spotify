@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.kde.KRunnerSpotify
+Exec=/usr/bin/python3 "%{PROJECTDIR}/KRunnerSpotify.py"

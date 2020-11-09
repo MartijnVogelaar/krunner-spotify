@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=KRunnerSpotify
+Comment=Plugin to easily control Spotify from KRunner
+X-KDE-ServiceTypes=Plasma/Runner
+Type=Service
+Icon=Spotify
+X-KDE-PluginInfo-Author=Martijn Vogelaar
+X-KDE-PluginInfo-Email=martijn.j.vogelaar@outlook.com
+X-KDE-PluginInfo-Name=KRunnerSpotify
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-License=GPL-3.0
+X-KDE-PluginInfo-EnabledByDefault=true
+X-Plasma-API=DBus
+X-Plasma-DBusRunner-Service=org.kde.KRunnerSpotify
+X-Plasma-DBusRunner-Path=/KRunnerSpotify
