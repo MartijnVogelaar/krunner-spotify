@@ -1,6 +1,6 @@
 # KRunner-Spotify
 
-This plugin allows you to easily control [Spotify](https://www.spotify.com/) using [KRunner](https://github.com/KDE/krunner). The plugin uses [Spotipy](https://github.com/plamere/spotipy) to interact with the [Spotify Web API](https://developer.spotify.com/documentation/web-api/). Using only a handful of words the user can control Spotify in a straightforward manner, even if Spotify does not run on the same device as KRunner is running on. 
+This plugin allows you to easily control [Spotify](https://www.spotify.com/) using [KRunner](https://github.com/KDE/krunner). The plugin uses [Spotipy](https://github.com/plamere/spotipy) to interact with the [Spotify Web API](https://developer.spotify.com/documentation/web-api/). Using only a handful of words the user can control Spotify in a straightforward manner, even if Spotify does not run on the same device as KRunner is running on. Whether you are playing Spotify on your phone, Chromecast(Audio), Smart TV or anyother device, you are able to control it using this plugin!  
 
 # Dependencies
 In order to run the project the following software needs to be installed:
@@ -11,7 +11,7 @@ In order to run the project the following software needs to be installed:
 <br/>
 
 # Install
-After installing all dependencies listed above the following steps are needed to finish the installation:
+After installing all dependencies listed above, the following steps are needed to finish the installation:
 1. Clone the repo
 ```sh
 git clone https://github.com/MartijnVogelaar/krunner-spotify
