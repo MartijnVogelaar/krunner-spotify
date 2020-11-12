@@ -40,9 +40,9 @@ $[Main-Command] $[Arg1] $[Sub-Command] $[Arg1] $[Arg2]
 The [add](##add) command can be used to add a track to the queue. To be able to use the add command a `sub-command` has to be supplied. The supported `sub-commands` for the [add](##add) command are the following:
 * [song by artist](##Artist)
 * [song](##song)
-</br></br>
+<br><br>
 
-## **Examples**:</br>
+## **Examples**:<br>
 Add the song "Mockingbird" to the queue
 ```
 Add song mockingbird
@@ -51,7 +51,7 @@ Add a song by "Eminem"
 ```
 Add artist Eminem 
 ```
-</br></br>
+<br><br>
 
 ## **Decrease volume**
 The [DecVol](##Decrease-Volume) command can be used to decrease the volume of the playback device.
@@ -63,7 +63,7 @@ There are two ways of using the [DecVol](##Decrease-Volume) command:
   * Decrease volume with 50%
   * Decrease volume with 100%
 * Entering the [DecVol](##Decrease-Volume) command with a value x (0 <= x <= 100) as argument will create a result which allows you to decrease the volume with x%.
-</br></br>
+<br><br>
 
 ## **EditConfig**
 The [EditConfig](##EditConfig) command allows you to easily open the configuration file in the graphical editor chosen specified in the config file.
@@ -72,7 +72,7 @@ Note: the changes in the configuration do not apply untill:
    • the plugin is restarted
    • execution of the ReloadConfig command.
 ```
-</br>
+<br>
 
 
 ## **Increase volume**
@@ -85,7 +85,7 @@ There are two ways of using the [IncVol](##Increase-Volume) command:
   * Increase volume with 50%
   * Increase volume with 100%
 * Entering the [IncVol](##Increase-Volume) command with a value `x` (0 <= `x` <= 100) as argument will create a result which allows you to increase the volume with `x%`.
-</br></br>
+<br><br>
 
 
 ## **Login**
@@ -94,24 +94,24 @@ The `Login` command can be used to authorize the plugin to control your Spotify 
 ```
 Note: If the user is not yet logged in, any `main-command` will act as if the `Login` command is entered. 
 ```
-</br>
+<br>
 
 ## **Logout**
 The `Logout` command can be used to log out. On execution of the `Logout` command the .cache file containing the authentication token is deleted.
-</br></br>
+<br><br>
 
 
 ## **Next**
 The `Next` command can be used to skip a track.
-</br></br>
+<br><br>
 
 ## **Previous**
 The `Previous` command can be used to play the last played a track.
-</br></br>
+<br><br>
 
 ## **Pause**
 The `Pause` command can be used to pause the current track.
-</br></br>
+<br><br>
 
 
 ## **Play**
@@ -121,8 +121,11 @@ The `Play` command can be used to play for example a playlist or track. To be ab
 * `Play` [playlist](##playlist)
 * `Play` [artist](##artist)
 * `Play` [song](##song)
+* `Play` [podcast](##podcast)
+* `Play` [followedpodcast](##followedPodcast)
+* `Play` [episode](##episode)
 
-## **Examples**:</br>
+## **Examples**:<br>
 Play the song "Mockingbird"
 ```
 Play song mockingbird
@@ -131,23 +134,23 @@ Play a song by "Eminem"
 ```
 Play artist Eminem 
 ```
-</br>
+<br>
 
 ## **Resume**
 The `Resume` command can be used to resume/start the current track.
-</br></br>
+<br><br>
 
 
 ## **Start Spotify**
 The `Spotify` can be used to start Spotify in your default browser.
-</br></br>
+<br><br>
 
 ## **TrackInfo**
 The `TrackInfo` command can be used to retrieve information about the current track playing. The info being shown
 depends on the type of track being played. The following two types with the following info are available:
  * Music, show title, artist, progress and duration. 
  * Episode of a show, shows title of the show, name of the episode, progress and duration. 
-</br></br>
+<br><br>
 
 
 <!-- ----------------------------------------------------------------- --> 
@@ -158,63 +161,63 @@ depends on the type of track being played. The following two types with the foll
 ## Featured
 The `featured` `sub-command` can be used in combination with the `Play` command. When the feature `sub-command` is supplied after the `Play` command featured playlists are shown. The featured `sub-command` takes one optional argument:
 
-* Page number, showing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
 
 
-### **Examples**:</br>
-The following `query` can be used to show the featured playlists. After selecting a playlist it will be played. 
+### **Examples**:<br>
+The following `query` can be used to show the featured playlists. After selecting a playlist, it will be played. 
 ```
 Play featured
 ```
-The following `query` can be used to show the second page with featured playlists. After selecting a playlist it will be played. 
+The following `query` can be used to show the second page with featured playlists. After selecting a playlist, it will be played. 
 ```
 Play featured p2
 ```
-</br>
+<br>
 
 ## My playlist
 The `myplaylist` `sub-command` can be used in combination with the `Play` command. When the `myplaylist` `sub-command` is supplied after the `Play` command your playlists are shown. The `myplaylist` `sub-command` takes one optional argument:
 
-* Page number, showing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
 
 
-### **Examples**:</br>
-The following `query` can be used to show your playlists. After selecting a playlist it will be played.
+### **Examples**:<br>
+The following `query` can be used to show your playlists. After selecting a playlist, it will be played.
 ```
 Play myplaylist
 ```
-The following `query` can be used to show the second page with your playlists. After selecting a playlist it will be played. 
+The following `query` can be used to show the second page with your playlists. After selecting a playlist, it will be played. 
 ```
 Play myplaylist p2
 ```
-</br>
+<br>
 
 ## Playlist
 The `playlist` `sub-command` can be used in combination with the `Play` command. The playlist `sub-command` takes two arguments:
 
 * Search term, title of the playlist which should be searched for. (**Required**)
-* Page number, showing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
 
 
-### **Examples**:</br>
-The following command can be used to search for a playlist which is named: "2pac". After selecting a playlist it will be played.
+### **Examples**:<br>
+The following command can be used to search for a playlist which is named: "2pac". After selecting a playlist, it will be played.
 ```
 Play playlist 2pac
 ```
-The following command can be used to search for a playlist which is named: "2pac" and show the second page. After selecting a playlist it will be played.
+The following command can be used to search for a playlist which is named: "2pac" and show the second page. After selecting a playlist, it will be played.
 ```
 Play playlist 2pac p2
 ```
-</br>
+<br>
 
 ## Artist
 The `artist` `sub-command` can be used in combination with both the `Play` as `Add` command. The `artist` `sub-command` takes two arguments:
 
 * Search term, name of the artist which should be searched for. (**Required**)
-* Page number, showing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
 
-### **Examples**:</br>
-The following command can be used to search for a song by: "Eminem". After selecting the song it will be played.
+### **Examples**:<br>
+The following command can be used to search for a song by: "Eminem". After selecting the song, it will be played.
 ```
 Play artist Eminem
 ```
@@ -222,18 +225,18 @@ The following command can be used to search for a song by: "Eminem" and will sho
 ```
 Add artist Eminem p2
 ```
-</br>
+<br>
 
 
 ## Song
 
-The `song` `sub-command` can be used inc ombination with both the `Play` as `Add` command. The artist `sub-command` takes two arguments:
+The `song` `sub-command` can be used in combination with both the `Play` as `Add` command. The artist `sub-command` takes two arguments:
 
 * Search term, name of the song which should be searched for. (**Required**)
-* Page number, showing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
 
-### **Examples**:</br>
-The following command can be used to search for a song named: "Mockingbird". After selecting the song it will be played.
+### **Examples**:<br>
+The following command can be used to search for a song named: "Mockingbird". After selecting the song, it will be played.
 ```
 Play song Mockingbird
 ```
@@ -242,6 +245,71 @@ The following command can be used to search for a song named: "Stan" and will sh
 Add song Stan p2
 ```
 
+## Podcast
+The `podcast` `sub-command` can be used in combination with the `Play` command. The `podcast` `sub-command` takes two arguments:
+
+* Search term, name of the podcast which should be searched for. (**Required**)
+* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+
+### **Examples**:<br>
+The following command can be used to search for the podcast named: "Serial Killers". After selecting the podcast, it will be played.
+```
+Play podcast Serial Killers
+```
+The following command can be used to search for a podcast named: "Soccer" and will show the second page. After selecting the podcast it will be palyed
+```
+Play podcast Soccer p2
+```
+<br>
+
+## Followed Podcast
+The `followedpodcast` `sub-command` can be used in combination with the `Play` command. When the `followedpodcast` `sub-command` is supplied after the `Play` command your followed podcasts are shown. The `followedpodcast` `sub-command` takes one optional argument:
+
+* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+
+
+### **Examples**:<br>
+The following `query` can be used to show podcasts which you follow. After selecting a podcast, it will be played.
+```
+Play followedpodcast
+```
+The following `query` can be used to show the second page with podcasts followed by you. After selecting a podcast, it will be played. 
+```
+Play followedpodcast p2
+```
+<br>
+
+
+## Episode
+
+The `episode` `sub-command` can be used in combination with the `Play` command. When the `episode` `sub-command` is supplied after the `Play` command episodes from the currently playing podcast are shown. The `episode` `sub-command` takes one optional argument:
+
+* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+
+
+### **Examples**:<br>
+The following `query` can be used to show episodes of the currently playing podcast. After selecting an episode, it will be played.
+```
+Play episode
+```
+The following `query` can be used to show the second page with episodes of the currently playing podcast. After selecting an episode, it will be played.
+```
+Play episode p2
+```
+<br>
+
+The icon in front of the episodes might have different colors. Each color has its own meaning which will be explained below:
+
+<img src="./icons/CurrentlyPlayingSpotify.svg" width="20" > This episode is currently being played. \
+<img src="./icons/FullyPlayedSpotify.svg" width="20" > This episode has been fully listened to, at least once before.\
+<img src="./icons/ResumeSpotify.svg" width="20" > This episode has partially been listened to before. If you select this episode it will continue where you left off!\
+<img src="./icons/NewSpotify.svg" width="20" > This episode has never been lsitened to before. 
+
+<br>
+
+```
+Note that a podcast has to be playing to be able to use this subcommand in combination with the Play command.
+```
 
 # Config file
 
@@ -258,7 +326,7 @@ After editing the config file, it has to be (re)loaded into the plugin, this can
 ## Settings
 * **MAX_RESULTS** defines the number of results shown at once
 * **CACHE_PATH** is the path which will be used to save the acces_token.
-* **CASE_SENSITIVE** defines whether commands are CaSe SEnSiTIVe
+* **CASE_SENSITIVE** defines whether commands are CaSe SEnSiTIVe 
 * **CONFIG_EDITOR** defines which text editor will be opened when entering the EditConfig command.
 
 

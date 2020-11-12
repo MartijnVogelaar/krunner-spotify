@@ -4,9 +4,9 @@ from Util import parseSearchQuery
 from Config import getSetting, getCommandName
 
 
-class Episodes(Command):
+class Episode(Command):
     def __init__(self, spotify):
-        super().__init__(getCommandName("EPISODES_COMMAND"), spotify)
+        super().__init__(getCommandName("EPISODE_COMMAND"), spotify)
 
     def Match(self, query: str):
         query, page = parseSearchQuery(query)
@@ -20,7 +20,7 @@ class Episodes(Command):
             relevance = 100
             for episode in episodes['items']:
                 icon = self.GetIcon(episode, playbackDetails)
-                episodeResults.append((getCommandName("PLAY_COMMAND") + " " + episode["uri"],
+                episodeResults.append((episode["uri"],
                                        episode["name"],
                                        icon,
                                        relevance, 100, {}))

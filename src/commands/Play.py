@@ -6,6 +6,7 @@ from .Song import Song
 from .MyPlaylist import MyPlaylist
 from .FollowedPodcast import FollowedPodcast
 from .Podcast import Podcast
+from .Episode import Episode
 from Config import getCommandName, getSetting
 
 
@@ -53,4 +54,6 @@ class Play(Command):
             return FollowedPodcast(self.spotify)
         elif(command == getCommandName("PODCAST_COMMAND")):
             return Podcast(self.spotify)
+        elif(command == getCommandName("EPISODE_COMMAND")):
+            return Episode(self.spotify)
         raise RuntimeError("Incorrect command")
