@@ -161,7 +161,7 @@ depends on the type of track being played. The following two types with the foll
 ## Featured
 The `featured` `sub-command` can be used in combination with the `Play` command. When the feature `sub-command` is supplied after the `Play` command featured playlists are shown. The featured `sub-command` takes one optional argument:
 
-* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+* Page number, show pages containing more results by entering: p{$_pagenumber}. (**Optional**)  
 
 
 ### **Examples**:<br>
@@ -178,7 +178,7 @@ Play featured p2
 ## My playlist
 The `myplaylist` `sub-command` can be used in combination with the `Play` command. When the `myplaylist` `sub-command` is supplied after the `Play` command your playlists are shown. The `myplaylist` `sub-command` takes one optional argument:
 
-* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+* Page number, show pages containing more results by entering: p{$_pagenumber}. (**Optional**)  
 
 
 ### **Examples**:<br>
@@ -193,10 +193,10 @@ Play myplaylist p2
 <br>
 
 ## Playlist
-The `playlist` `sub-command` can be used in combination with the `Play` command. The playlist `sub-command` takes two arguments:
+The `playlist` `sub-command` can be used in combination with the `Play` command. The `playlist` `sub-command` allows you to search for playlists made by others. The `sub-command` takes two arguments:
 
 * Search term, title of the playlist which should be searched for. (**Required**)
-* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+* Page number, show pages containing more results by entering: p{$_pagenumber}. (**Optional**)  
 
 
 ### **Examples**:<br>
@@ -211,10 +211,10 @@ Play playlist 2pac p2
 <br>
 
 ## Artist
-The `artist` `sub-command` can be used in combination with both the `Play` as `Add` command. The `artist` `sub-command` takes two arguments:
+The `artist` `sub-command` can be used in combination with both the `Play` as `Add` command. The `artist` `sub-command` allows you to search for songs by a certain artists, the `sub-command` takes two arguments:
 
 * Search term, name of the artist which should be searched for. (**Required**)
-* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+* Page number, show pages containing more results by entering: p{$_pagenumber}. (**Optional**)  
 
 ### **Examples**:<br>
 The following command can be used to search for a song by: "Eminem". After selecting the song, it will be played.
@@ -230,10 +230,10 @@ Add artist Eminem p2
 
 ## Song
 
-The `song` `sub-command` can be used in combination with both the `Play` as `Add` command. The artist `sub-command` takes two arguments:
+The `song` `sub-command` can be used in combination with both the `Play` as `Add` command. The `song` `sub-command` allows you to search for songs by it's name, the `sub-command` takes two arguments:
 
 * Search term, name of the song which should be searched for. (**Required**)
-* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+* Page number, show pages containing more results by entering: p{$_pagenumber}. (**Optional**)  
 
 ### **Examples**:<br>
 The following command can be used to search for a song named: "Mockingbird". After selecting the song, it will be played.
@@ -246,10 +246,10 @@ Add song Stan p2
 ```
 
 ## Podcast
-The `podcast` `sub-command` can be used in combination with the `Play` command. The `podcast` `sub-command` takes two arguments:
+The `podcast` `sub-command` can be used in combination with the `Play` command. The `podcast` `sub-command` allows you to search for podcasts by a given name, the `sub-command` takes two arguments:
 
 * Search term, name of the podcast which should be searched for. (**Required**)
-* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+* Page number, show pages containing more results by entering: p{$_pagenumber}. (**Optional**)  
 
 ### **Examples**:<br>
 The following command can be used to search for the podcast named: "Serial Killers". After selecting the podcast, it will be played.
@@ -265,7 +265,7 @@ Play podcast Soccer p2
 ## Followed Podcast
 The `followedpodcast` `sub-command` can be used in combination with the `Play` command. When the `followedpodcast` `sub-command` is supplied after the `Play` command your followed podcasts are shown. The `followedpodcast` `sub-command` takes one optional argument:
 
-* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+* Page number, show pages containing more results by entering: p{$_pagenumber}. (**Optional**)  
 
 
 ### **Examples**:<br>
@@ -284,7 +284,7 @@ Play followedpodcast p2
 
 The `episode` `sub-command` can be used in combination with the `Play` command. When the `episode` `sub-command` is supplied after the `Play` command episodes from the currently playing podcast are shown. The `episode` `sub-command` takes one optional argument:
 
-* Page number, showing containing pages more results by entering: p{$_pagenumber}. (**Optional**)  
+* Page number, show pages containing more results by entering: p{$_pagenumber}. (**Optional**)  
 
 
 ### **Examples**:<br>
