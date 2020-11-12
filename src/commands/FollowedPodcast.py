@@ -1,7 +1,6 @@
 from .Command import Command
 from Config import getCommandName, getSetting
 from Util import parseSearchQuery
-import pprint
 import dbus.service
 
 iface = "org.kde.krunner1"

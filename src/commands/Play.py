@@ -33,7 +33,7 @@ class Play(Command):
     def Run(self, data: str):
         if("track" in data or "episode" in data):
             self.spotify.start_playback(uris=[data])
-        else:
+        elif("show" in data or "artist" in data or "playlist" in data):
             self.spotify.start_playback(context_uri=data)
 
     def executeCommand(self, command: str):

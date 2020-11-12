@@ -9,8 +9,6 @@ class Song(Command):
 
     def Match(self, query: str):
         query, page = parseSearchQuery(query)
-        query = "track:" + query
-
         trackOffset = int(getSetting("MAX_RESULTS")) * (page - 1)
         results = self.spotify.search(
             query, int(getSetting("MAX_RESULTS")), trackOffset, "track")

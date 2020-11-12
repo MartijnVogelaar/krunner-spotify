@@ -2,7 +2,6 @@ from .Command import Command
 from Config import getCommandName
 from Util import parseSearchQuery
 from Config import getSetting, getCommandName
-import pprint
 
 
 class Episodes(Command):
