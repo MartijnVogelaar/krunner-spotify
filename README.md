@@ -6,7 +6,7 @@ This plugin allows you to easily control [Spotify](https://www.spotify.com/) usi
 In order to run the project the following software needs to be installed:
 * [Python3](https://www.python.org/download/releases/3.0/)
 * [Pip3](https://pip.pypa.io/en/stable/)
-* [Spotipy](https://spotipy.readthedocs.io/en/2.16.1/)
+* [Spotipy](https://spotipy.readthedocs.io/en/2.16.1/) - minimum version of 2.14.0
 
 <br/>
 
