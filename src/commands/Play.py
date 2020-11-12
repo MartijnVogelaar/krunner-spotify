@@ -4,6 +4,8 @@ from .FeaturedPlaylist import FeaturedPlaylist
 from .Playlist import Playlist
 from .Song import Song
 from .MyPlaylist import MyPlaylist
+from .FollowedPodcast import FollowedPodcast
+from .Podcast import Podcast
 from Config import getCommandName, getSetting
 
 
@@ -29,7 +31,7 @@ class Play(Command):
             return [("", "Invalid command", "Spotify", 100, 100, {})]
 
     def Run(self, data: str):
-        if("track" in data):
+        if("track" in data or "episode" in data):
             self.spotify.start_playback(uris=[data])
         else:
             self.spotify.start_playback(context_uri=data)
@@ -47,4 +49,8 @@ class Play(Command):
             return Playlist(self.spotify)
         elif(command == getCommandName('PLAY_MY_PLAYLIST_COMMAND')):
             return MyPlaylist(self.spotify)
+        elif(command == getCommandName("FOLLOWED_PODCAST_COMMAND")):
+            return FollowedPodcast(self.spotify)
+        elif(command == getCommandName("PODCAST_COMMAND")):
+            return Podcast(self.spotify)
         raise RuntimeError("Incorrect command")

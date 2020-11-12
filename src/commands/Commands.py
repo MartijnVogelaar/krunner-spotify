@@ -12,6 +12,7 @@ from .Previous import Previous
 from .ReloadConfig import ReloadConfig
 from .Resume import Resume
 from .StartSpotify import StartSpotify
+from .Episodes import Episodes
 from Config import getCommandName
 
 
@@ -44,3 +45,5 @@ def executeCommand(command, spotify):
         return ReloadConfig(spotify)
     elif(command == getCommandName("EDIT_CONFIG_COMMAND")):
         return EditConfig(spotify)
+    elif(command == getCommandName("EPISODES_COMMAND")):
+        return Episodes(spotify)

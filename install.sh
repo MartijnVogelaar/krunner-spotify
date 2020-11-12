@@ -5,9 +5,9 @@ set -e
 
 mkdir -p ~/.local/share/kservices5/
 mkdir -p ~/.local/share/dbus-1/services/
-
-
 mkdir -p ~/.config/KRunner-Spotify
+mkdir -p ~/.local/share/pixmaps
+cp icons/* ~/.local/share/pixmaps
 
 cp KRunner-Spotify.config ~/.config/KRunner-Spotify/
 cp plasma-runner-KRunnerSpotify.desktop ~/.local/share/kservices5/
