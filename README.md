@@ -50,7 +50,6 @@ See `USAGE.md` for an extensive guide.
 
 ## Future implementations:
 
-* Support for Podcasts
 * Control progress of a track
     * Fast forward
     * Rewind
