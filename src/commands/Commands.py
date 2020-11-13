@@ -10,8 +10,10 @@ from .Pause import Pause
 from .Play import Play
 from .Previous import Previous
 from .ReloadConfig import ReloadConfig
+from .Repeat import Repeat
 from .Resume import Resume
 from .StartSpotify import StartSpotify
+from .Shuffle import Shuffle
 from Config import getCommandName
 
 
@@ -44,3 +46,7 @@ def executeCommand(command, spotify):
         return ReloadConfig(spotify)
     elif(command == getCommandName("EDIT_CONFIG_COMMAND")):
         return EditConfig(spotify)
+    elif(command == getCommandName("SHUFFLE_COMMAND")):
+        return Shuffle(spotify)
+    elif(command == getCommandName("REPEAT_COMMAND")):
+        return Repeat(spotify)
