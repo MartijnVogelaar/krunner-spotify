@@ -13,7 +13,4 @@ class Shuffle(Command):
         return [(self.command + " " + state, state + " shuffle", "Spotify", 100, 100, {})]
 
     def Run(self, data: str):
-        if(data == "Enable"):
-            self.spotify.shuffle(True)
-        else:
-            self.spotify.shuffle(False)
+        self.spotify.shuffle(data == "Enable")
