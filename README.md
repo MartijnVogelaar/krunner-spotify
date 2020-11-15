@@ -49,11 +49,6 @@ The KRunner-Spotify plugin has a wide range of functionalities including:
 See `USAGE.md` for an extensive guide.
 
 ## Future implementations:
-
-* Control progress of a track
-    * Fast forward
-    * Rewind
-    * Move to a certain point in the track
 * Control your own playlists
     * Create
     * Delete
@@ -62,10 +57,7 @@ See `USAGE.md` for an extensive guide.
 * Search and play album by name
 * Search and play album by artists name
 * Play an artist besides just searching for songs by artist.
-* Change playback style
-    * Shuffle
-    * Normal
-    * Repeat
+
 
 ## License
 Distributed under the GPL-3.0 License. See `LICENSE` for more information.

@@ -75,6 +75,48 @@ Note: the changes in the configuration do not apply untill:
 <br>
 
 
+## **FastForward**
+The `FastForward` command can be used to fast forward the current track. The `command` takes one optional argument.
+
+* `Time`, time will be used to fast forward the current track by a certain amount of time. It has to be supplied in the following format: `Hours` : `minutes` :  `seconds`. (**Optional**)
+
+If both `hours` and `minutes` are 0, they can be left out. If no argument is supplied, a number of default results are given.
+
+```
+Note: If one is to "over" fast forward, I.e. fast forwarding to a time greater than the length of the track, the next track will be played starting from 0.
+```
+
+
+### **Examples**:<br>
+The following `query` can be used to fast forward the current track with 40 seconds:
+```
+FastForward 60
+```
+
+The following `queries` can be used to fast forward the current track with 5 minutes and 40 seconds:
+```
+FastForward 5:40
+
+or
+
+FastForward 05:40
+```
+
+The following `queries` can be used to fast forward the current track with 1 hour, 1 minute and 40 seconds:
+```
+FastForward 1:1:40
+
+or
+
+FastForward 1:01:40
+
+or
+
+FastForward 01:01:40
+```
+<br>
+
+
 ## **Increase volume**
 The [IncVol](##Increase-Volume) command can be used to increase the volume of the playback device.
 There are two ways of using the [IncVol](##Increase-Volume) command:
@@ -136,13 +178,123 @@ Play artist Eminem
 ```
 <br>
 
+## **Repeat**
+The `Repeat` command can be used to change the repeat mode. The `command` takes one **required** argument:
+
+  * Mode
+    * **`track`** will repeat the current track.
+    * **`context`** will repeat the current context.
+    * **`off`** will turn repeat off.
+
+## **Examples**:<br>
+Set repeat mode to track
+```
+Repeat track
+```
+Set repeat mode to context
+```
+Repeat context
+```
+<br>
+
+
 ## **Resume**
 The `Resume` command can be used to resume/start the current track.
 <br><br>
 
+## **Rewind**
+The `Rewind` command can be used to rewind the current track. The `command` takes one optional argument.
+
+
+* `Time`, time will be used to rewind the current track by a certain amount of time. It has to be supplied in the following format: `Hours` : `minutes` :  `seconds`. (**Optional**)
+
+
+If both `hours` and `minutes` are 0, they can be left out. If no argument is supplied, a number of default results are given.
+
+
+```
+Note: If one is to "under" rewind, I.e. rewinding to a time less than 0, the track will be played starting from 0.
+```
+
+
+### **Examples**:<br>
+The following `query` can be used to rewind the current track with 40 seconds
+```
+Rewind 40
+```
+
+The following `queries` can be used to rewind the current track with 5 minutes and 40 seconds
+```
+Rewind 5:40
+
+or
+
+Rewind 05:40
+```
+
+The following `queries` can be used to rewind the current track with 1 hour, 1 minute and 40 seconds
+```
+Rewind 1:1:40
+
+or
+
+Rewind 1:01:40
+
+or
+
+Rewind 01:01:40
+```
+<br>
+
+## **Seek**
+The `Seek` command can be used to jump to a certain point in a track. The `command` takes one required argument.
+
+* `Time`, time which will be used to jump to a certain point in the current track, has to be supplied in the following format: `Hours` : `minutes` :  `seconds`. (**Optional**)
+
+If both `hours` and `minutes` are 0, they can be left out.
+
+```
+Note: If one is to "over" seek, I.e. seeking to a time greater than the length of the track, the next track will be played starting from 0.
+```
+
+
+### **Examples**:<br>
+The following `query` can be used to jump to the time: 40 seconds
+```
+Seek 40
+```
+
+The following `queries` can be used to jump to the time:  5 minutes and 40 seconds
+```
+Seek 5:40
+
+or
+
+Seek 05:40
+```
+
+The following `queries` can be used to jump to the time:  1 hour, 1 minute and 40 seconds
+```
+Seek 1:1:40
+
+or
+
+Seek 1:01:40
+
+or
+
+Seek 01:01:40
+```
+
+
+<br>
+
+
+## **Shuffle**
+The `Shuffle` command can be used to toggle shuffling of songs.
 
 ## **Start Spotify**
-The `Spotify` can be used to start Spotify in your default browser.
+The `Spotify` command can be used to start Spotify in your default browser.
 <br><br>
 
 ## **TrackInfo**
