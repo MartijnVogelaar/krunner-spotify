@@ -8,9 +8,14 @@ class Rewind(Command):
 
     def Match(self, query: str):
         query = query.strip(" ")
-        if(query.isnumeric()):
-            seconds = int(query)
-            return [(self.command + " " + str(seconds), "Rewind " + str(seconds) + " seconds.", "Spotify", 100, 100, {})]
+        time = query.split(":")
+        if all(x.isnumeric() for x in time):
+            if len(time) == 1:
+                return [(self.command + " " + time[0], "Rewind: " + time[0] + " sec", "Spotify", 100, 100, {})]
+            if len(time) == 2:
+                return [(self.command + " " + str(60*int(time[0]) + int(time[1])), "Rewind: " + time[0] + " min " + time[1] + " sec", "Spotify", 100, 100, {})]
+            if len(time) == 3:
+                return [(self.command + " " + str(60*60 * int(time[0]) + 60*int(time[1]) + int(time[2])), "Rewind: " + time[0] + " hr " + time[1] + " min " + time[2] + " sec", "Spotify", 100, 100, {})]
         else:
             return [(self.command + " 5", "Rewind 5 seconds.", "Spotify", 100, 100, {}),
                     (self.command + " 15", "Rewind 15 seconds.","Spotify", 90, 100, {}),
