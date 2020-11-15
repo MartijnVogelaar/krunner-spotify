@@ -82,6 +82,10 @@ The `FastForward` command can be used to fast forward the current track. The `co
 
 If both `hours` and `minutes` are 0, they can be left out. If no argument is supplied, a number of default results are given.
 
+```
+Note: If one is to "over" fast forward, I.e. fast forwarding to a time greater than the length of the track, the next track will be played starting from 0.
+```
+
 
 ### **Examples**:<br>
 The following `query` can be used to fast forward the current track with 40 seconds:
@@ -208,6 +212,11 @@ The `Rewind` command can be used to rewind the current track. The `command` take
 If both `hours` and `minutes` are 0, they can be left out. If no argument is supplied, a number of default results are given.
 
 
+```
+Note: If one is to "under" rewind, I.e. rewinding to a time less than 0, the track will be played starting from 0.
+```
+
+
 ### **Examples**:<br>
 The following `query` can be used to rewind the current track with 40 seconds
 ```
@@ -244,6 +253,10 @@ The `Seek` command can be used to jump to a certain point in a track. The `comma
 
 If both `hours` and `minutes` are 0, they can be left out.
 
+```
+Note: If one is to "over" seek, I.e. seeking to a time greater than the length of the track, the next track will be played starting from 0.
+```
+
 
 ### **Examples**:<br>
 The following `query` can be used to jump to the time: 40 seconds
@@ -272,6 +285,8 @@ or
 
 Seek 01:01:40
 ```
+
+
 <br>
 
 
