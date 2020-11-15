@@ -24,8 +24,7 @@ class Rewind(Command):
                     (self.command + " 600", "Rewind 10 minutes", "Spotify", 60, 100, {})]
 
     def Run(self, data: str):
-        newProgress_ms = self.spotify.current_playback(
-        )["progress_ms"] - (int(data) * 1000)
+        newProgress_ms = self.spotify.current_playback()["progress_ms"] - (int(data) * 1000)
         if newProgress_ms < 0:
             newProgress_ms = 0
         self.spotify.seek_track(newProgress_ms)
