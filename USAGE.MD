@@ -78,18 +78,18 @@ Note: the changes in the configuration do not apply untill:
 ## **FastForward**
 The `FastForward` command can be used to fast forward the current track. The `command` takes one optional argument.
 
-* `Time`, time which will be used to fast forward the current track, has to be supplied in the following format: `Hours` : `minutes` :  `seconds`. (**Optional**)
+* `Time`, time will be used to fast forward the current track by a certain amount of time. It has to be supplied in the following format: `Hours` : `minutes` :  `seconds`. (**Optional**)
 
-If `hours` or `minutes` is empty it can be left out. If no argument is supplied, a default number of results are given.
+If both `hours` and `minutes` are 0, they can be left out. If no argument is supplied, a number of default results are given.
 
 
 ### **Examples**:<br>
-The following `query` can be used to fast forward the current track with 40 seconds
+The following `query` can be used to fast forward the current track with 40 seconds:
 ```
 FastForward 60
 ```
 
-The following `queries` can be used to fast forward the current track with 5 minutes and 40 seconds
+The following `queries` can be used to fast forward the current track with 5 minutes and 40 seconds:
 ```
 FastForward 5:40
 
@@ -98,7 +98,7 @@ or
 FastForward 05:40
 ```
 
-The following `queries` can be used to fast forward the current track with 1 hour, 1 minute and 40 seconds
+The following `queries` can be used to fast forward the current track with 1 hour, 1 minute and 40 seconds:
 ```
 FastForward 1:1:40
 
@@ -182,7 +182,16 @@ The `Repeat` command can be used to change the repeat mode. The `command` takes 
     * **`context`** will repeat the current context.
     * **`off`** will turn repeat off.
 
-
+## **Examples**:<br>
+Set repeat mode to track
+```
+Repeat track
+```
+Set repeat mode to context
+```
+Repeat context
+```
+<br>
 
 
 ## **Resume**
@@ -192,15 +201,17 @@ The `Resume` command can be used to resume/start the current track.
 ## **Rewind**
 The `Rewind` command can be used to rewind the current track. The `command` takes one optional argument.
 
-* `Time`, time which will be used to rewind the current track, has to be supplied in the following format: `Hours` : `minutes` :  `seconds`. (**Optional**)
 
-If `hours` or `minutes` is empty it can be left out. If no argument is supplied, a default number of results are given.
+* `Time`, time will be used to rewind the current track by a certain amount of time. It has to be supplied in the following format: `Hours` : `minutes` :  `seconds`. (**Optional**)
+
+
+If both `hours` and `minutes` are 0, they can be left out. If no argument is supplied, a number of default results are given.
 
 
 ### **Examples**:<br>
 The following `query` can be used to rewind the current track with 40 seconds
 ```
-Rewind 60
+Rewind 40
 ```
 
 The following `queries` can be used to rewind the current track with 5 minutes and 40 seconds
@@ -229,15 +240,15 @@ Rewind 01:01:40
 ## **Seek**
 The `Seek` command can be used to jump to a certain point in a track. The `command` takes one required argument.
 
-* `Time`, time which will be used to rewind the current track, has to be supplied in the following format: `Hours` : `minutes` :  `seconds`. (**Optional**)
+* `Time`, time which will be used to jump to a certain point in the current track, has to be supplied in the following format: `Hours` : `minutes` :  `seconds`. (**Optional**)
 
-If `hours` or `minutes` is empty it can be left out.
+If both `hours` and `minutes` are 0, they can be left out.
 
 
 ### **Examples**:<br>
 The following `query` can be used to jump to the time: 40 seconds
 ```
-Seek 60
+Seek 40
 ```
 
 The following `queries` can be used to jump to the time:  5 minutes and 40 seconds
