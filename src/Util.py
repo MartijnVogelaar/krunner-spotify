@@ -2,23 +2,27 @@ import re
 
 
 def parseSearchQuery(query):
-    page = 0
     query = query.lstrip(" ")
-    if(re.findall("p\d+$", query)):
-        query, page = query.rsplit("p", 1)
-    page = int(page)
-    if(page < 1):
-        page = 1
-    return query, page
+    if (query == ""):
+        return query,1
+    page = 0
+    result = list(filter(None,re.split(r" (p\d+$)", query)))
+    if(len(result) == 1):
+        return result[0], 1
+    else:
+        page = int(result[1][1])
+        return result[0], page
 
 
 def parseTracks(results):
+    print("1")
     parsedResults = []
     for track in results["tracks"]["items"]:
         track_details = (track["name"] + " - " +
                          track["album"]["artists"][0]["name"])
         parsedResults.append(
             (track["uri"], track_details, "Spotify", 100, 100, {}))
+    print("2")
     if(not parsedResults):
         parsedResults.append(
             ("", "No tracks found!", "Spotify", 100, 100, {}))
