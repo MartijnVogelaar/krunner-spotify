@@ -10,6 +10,7 @@ class FollowedPodcast(Command):
         super().__init__(getCommandName("FOLLOWED_PODCAST_COMMAND"), spotify)
 
     def Match(self, query: str):
+        query = " a " + query 
         query, page = parseSearchQuery(query)
         savedShowsOffset = int(getSetting("MAX_RESULTS")) * (page - 1)
         savedShows = self.spotify.current_user_saved_shows(offset=savedShowsOffset, limit=int(getSetting("MAX_RESULTS")))
@@ -20,7 +21,7 @@ class FollowedPodcast(Command):
             shows.append((uri, name, "Spotify", 100, 100, {"actions": ["asdf"]}))
         if(len(shows) > 0):
             return shows
-        return [("", "No podcast is being followed!", "Spotify", 100, 100, {})]
+        return [("", "No podcasts found!", "Spotify", 100, 100, {})]
 
     def Run(self, data: str):
         raise NotImplementedError
