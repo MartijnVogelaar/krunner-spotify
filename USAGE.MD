@@ -55,7 +55,7 @@ Add artist Eminem
 
 ## **Decrease volume**
 The [DecVol](##Decrease-Volume) command can be used to decrease the volume of the playback device.
-There are two ways of using the [DecVol](##Decrease-Volume) command:
+There are three ways of using the [DecVol](##Decrease-Volume) command:
 
 * Entering the [DecVol](##Decrease-Volume) command produces the following results:
   * Decrease volume with 10%
@@ -63,6 +63,7 @@ There are two ways of using the [DecVol](##Decrease-Volume) command:
   * Decrease volume with 50%
   * Decrease volume with 100%
 * Entering the [DecVol](##Decrease-Volume) command with a value x (0 <= x <= 100) as argument will create a result which allows you to decrease the volume with x%.
+* Entering the [DecVol](##Decrease-Volume) command with trailing minus(-) characters. Every character substracts a certain percentage of volume to the current volume. Removing a previously entered character increases the volume. The percentage decrease is defined in the config under: `VOLUME_STEP`.  
 <br><br>
 
 ## **EditConfig**
@@ -119,7 +120,7 @@ FastForward 01:01:40
 
 ## **Increase volume**
 The [IncVol](##Increase-Volume) command can be used to increase the volume of the playback device.
-There are two ways of using the [IncVol](##Increase-Volume) command:
+There are three ways of using the [IncVol](##Increase-Volume) command:
 
 * Entering the [IncVol](##Increase-Volume) command produces the following results:
   * Increase volume with 10%
@@ -127,6 +128,7 @@ There are two ways of using the [IncVol](##Increase-Volume) command:
   * Increase volume with 50%
   * Increase volume with 100%
 * Entering the [IncVol](##Increase-Volume) command with a value `x` (0 <= `x` <= 100) as argument will create a result which allows you to increase the volume with `x%`.
+* Entering the [IncVol](##Increase-Volume) command with trailing plus(+) characters. Every character adds a certain percentage of volume to the current volume. Removing a previously entered character decreases the volume. The percentage increase is defined in the config under: `VOLUME_STEP`.  
 <br><br>
 
 
@@ -159,13 +161,13 @@ The `Pause` command can be used to pause the current track.
 ## **Play**
 The `Play` command can be used to play for example a playlist or track. To be able to use the `Play` command a `sub-command` has to be supplied. The supported `subcommands` are the following:
 * `Play` [featured](##Featured)
-* `Play` [myplaylist](##myplaylist)
+* `Play` [myplaylist](##my-playlist)
 * `Play` [playlist](##playlist)
 * `Play` [artist](##artist)
 * `Play` [song](##song)
 * `Play` [podcast](##podcast)
-* `Play` [followedpodcast](##followedPodcast)
-* `Play` [episode](##episode)
+* `Play` [followedpodcast](##Followed-Podcast)
+* `Play` [episode](##Episode)
 
 ## **Examples**:<br>
 Play the song "Mockingbird"
@@ -480,6 +482,7 @@ After editing the config file, it has to be (re)loaded into the plugin, this can
 * **CACHE_PATH** is the path which will be used to save the acces_token.
 * **CASE_SENSITIVE** defines whether commands are CaSe SEnSiTIVe 
 * **CONFIG_EDITOR** defines which text editor will be opened when entering the EditConfig command.
+* **VOLUME_STEP** defiens the step in which the volume in- or decreases.
 
 
 ## Commandnames
