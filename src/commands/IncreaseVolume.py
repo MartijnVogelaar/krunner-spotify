@@ -24,8 +24,7 @@ class IncreaseVolume(Command):
             returnOptions = self.increaseByValue(query)
         elif(len(query) > 0 and query[0] == "+" and query == len(query) * query[0]):
             returnOptions = self.IncreaseByPlusCharacter(query)
-            
-        self.spotify.volume(IncreaseVolume.currentVolume)
+            self.spotify.volume(IncreaseVolume.currentVolume)
         return returnOptions if returnOptions != [] else self.IncreaseByChoice()
 
     def Run(self, data: str):

@@ -15,14 +15,12 @@ def parseSearchQuery(query):
 
 
 def parseTracks(results):
-    print("1")
     parsedResults = []
     for track in results["tracks"]["items"]:
         track_details = (track["name"] + " - " +
                          track["album"]["artists"][0]["name"])
         parsedResults.append(
             (track["uri"], track_details, "Spotify", 100, 100, {}))
-    print("2")
     if(not parsedResults):
         parsedResults.append(
             ("", "No tracks found!", "Spotify", 100, 100, {}))

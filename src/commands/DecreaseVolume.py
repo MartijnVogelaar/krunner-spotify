@@ -24,8 +24,7 @@ class DecreaseVolume(Command):
             returnOptions = self.DecreaseByValue(query)
         elif(len(query) > 0 and query[0] == "-" and query == len(query) * query[0]):
             returnOptions = self.DecreaseByMinusCharacter(query)
-        
-        self.spotify.volume(DecreaseVolume.currentVolume)
+            self.spotify.volume(DecreaseVolume.currentVolume)
         return returnOptions if returnOptions != [] else self.DecreaseByChoice()
 
     def Run(self, data: str):
