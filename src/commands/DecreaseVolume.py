@@ -22,7 +22,7 @@ class DecreaseVolume(Command):
         returnOptions = []
         if(query.isnumeric() and len(query) > 0):
             returnOptions = self.DecreaseByValue(query)
-        elif(len(query) > 0 and query[0] == "-" and query == len(query) * query[0]):
+        elif(len(query) > 0 and query[0] == getSetting("DECREASE_VOLUME_CHARACTER") and query == len(query) * query[0]):
             returnOptions = self.DecreaseByMinusCharacter(query)
             self.spotify.volume(DecreaseVolume.currentVolume)
         return returnOptions if returnOptions != [] else self.DecreaseByChoice()

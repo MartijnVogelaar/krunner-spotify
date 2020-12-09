@@ -22,7 +22,7 @@ class IncreaseVolume(Command):
         returnOptions = []
         if(query.isnumeric() and len(query) > 0):
             returnOptions = self.increaseByValue(query)
-        elif(len(query) > 0 and query[0] == "+" and query == len(query) * query[0]):
+        elif(len(query) > 0 and query[0] == getSetting("INCREASE_VOLUME_CHARACTER") and query == len(query) * query[0]):
             returnOptions = self.IncreaseByPlusCharacter(query)
             self.spotify.volume(IncreaseVolume.currentVolume)
         return returnOptions if returnOptions != [] else self.IncreaseByChoice()
