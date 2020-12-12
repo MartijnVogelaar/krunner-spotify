@@ -31,23 +31,26 @@ class SetVolume(Command):
                 SetVolume.currentVolume = self.spotify.current_playback()[
                     "device"]["volume_percent"]
             if(decreaseCharacters > SetVolume.previousDecreaseCharacters):
-                SetVolume.currentVolume = SetVolume.currentVolume - int(getSetting("VOLUME_STEP"))
+                SetVolume.currentVolume = SetVolume.currentVolume - int(getSetting("VOLUME_STEP")) * abs(decreaseCharacters - SetVolume.previousDecreaseCharacters)
             elif(increaseCharacters > SetVolume.previousIncreaseCharacters):
-                SetVolume.currentVolume = SetVolume.currentVolume + int(getSetting("VOLUME_STEP"))
+                SetVolume.currentVolume = SetVolume.currentVolume + int(getSetting("VOLUME_STEP")) * abs(increaseCharacters - SetVolume.previousIncreaseCharacters)
             elif(decreaseCharacters < SetVolume.previousDecreaseCharacters):
-                SetVolume.currentVolume = SetVolume.currentVolume + int(getSetting("VOLUME_STEP"))
+                SetVolume.currentVolume = SetVolume.currentVolume + int(getSetting("VOLUME_STEP")) * abs(decreaseCharacters - SetVolume.previousDecreaseCharacters)
             elif(increaseCharacters < SetVolume.previousIncreaseCharacters):
-                SetVolume.currentVolume = SetVolume.currentVolume - int(getSetting("VOLUME_STEP"))
+                SetVolume.currentVolume = SetVolume.currentVolume - int(getSetting("VOLUME_STEP")) * abs(increaseCharacters - SetVolume.previousIncreaseCharacters)
             SetVolume.previousDecreaseCharacters = decreaseCharacters
             SetVolume.previousIncreaseCharacters = increaseCharacters
             if SetVolume.currentVolume < 0:
                 SetVolume.currentVolume = 0
+                returnOptions = [(" ", "Min volume reached!", "Spotify", 100, 100, {})]
             elif SetVolume.currentVolume > 100:
                 SetVolume.currentVolume = 100
+                returnOptions = [(" ", "Max volume reached!", "Spotify", 100, 100, {})]
+            else:
+                returnOptions = [(" ", "Volume has been set to: " + str(SetVolume.currentVolume) + "%", "Spotify", 100, 100, {})]
             self.spotify.volume(SetVolume.currentVolume)
         else:
             returnOptions = self.setVolumeByChoice()
-
         return returnOptions
 
     def Run(self, data: str):
