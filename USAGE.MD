@@ -259,18 +259,6 @@ If both `hours` and `minutes` are 0, they can be left out.
 Note: If one is to "over" seek, I.e. seeking to a time greater than the length of the track, the next track will be played starting from 0.
 ```
 
-## **Set volume**
-The [SetVol](##Set-Volume) command can be used to set the volume of the playback device.
-There are three ways of using the [SetVol](##Set-Volume) command:
-
-* Entering the [SetVol](##Set-Volume) command produces the following results:
-  * Set volume to 10%
-  * Set volume to 25%
-  * Set volume to 50%
-  * Set volume to 100%
-* Entering the [SetVol](##Set-Volume) command with a value `x` (0 <= `x` <= 100) as argument will create a result which allows you to set the volume to `x%`.
-* Entering the [SetVol](##Set-Volume) command with trailing plus(+) or minus(-) characters. Every character adds a certain percentage of volume to the current volume. Removing a previously entered character decreases or increases the volume. The percentage decrease or increase is defined in the config under: `VOLUME_STEP`.  
-<br><br>
 
 ### **Examples**:<br>
 The following `query` can be used to jump to the time: 40 seconds
