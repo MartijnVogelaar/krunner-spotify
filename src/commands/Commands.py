@@ -17,6 +17,7 @@ from .Shuffle import Shuffle
 from .FastForward import FastForward
 from .Rewind import Rewind
 from .Seek import Seek
+from .SetVolume import SetVolume
 from Config import getCommandName
 
 
@@ -59,3 +60,5 @@ def executeCommand(command, spotify):
         return Rewind(spotify)
     elif(command == getCommandName("SEEK_COMMAND")):
         return Seek(spotify)
+    elif(command == getCommandName("SET_VOLUME_COMMAND")):
+        return SetVolume(spotify)
