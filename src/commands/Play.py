@@ -1,5 +1,6 @@
 from .Command import Command
 from .ArtistSong import ArtistSong
+from .Artist import Artist
 from .FeaturedPlaylist import FeaturedPlaylist
 from .Playlist import Playlist
 from .Song import Song
@@ -7,6 +8,7 @@ from .MyPlaylist import MyPlaylist
 from .FollowedPodcast import FollowedPodcast
 from .Podcast import Podcast
 from .Episode import Episode
+from .TopArtist import TopArtist
 from Config import getCommandName, getSetting
 
 
@@ -40,7 +42,9 @@ class Play(Command):
     def executeCommand(self, command: str):
         if(getSetting("CASE_SENSITIVE") == "False"):
             command = command.upper()
-        if(command == getCommandName('PLAY_SONG_COMMAND')):
+        if(command == getCommandName('PLAY_ARTIST_COMMAND')):
+            return Artist(self.spotify)
+        elif(command == getCommandName('PLAY_SONG_COMMAND')):
             return Song(self.spotify)
         elif(command == getCommandName('PLAY_SONG_BY_ARTIST_COMMAND')):
             return ArtistSong(self.spotify)
@@ -56,4 +60,6 @@ class Play(Command):
             return Podcast(self.spotify)
         elif(command == getCommandName("EPISODE_COMMAND")):
             return Episode(self.spotify)
+        elif(command == getCommandName("PLAY_TOP_ARTIST_COMMAND")):
+            return TopArtist(self.spotify)
         raise RuntimeError("Incorrect command")
