@@ -12,7 +12,6 @@ from .Previous import Previous
 from .ReloadConfig import ReloadConfig
 from .Repeat import Repeat
 from .Resume import Resume
-from .StartSpotify import StartSpotify
 from .Shuffle import Shuffle
 from .FastForward import FastForward
 from .Rewind import Rewind
@@ -38,8 +37,6 @@ def executeCommand(command, spotify):
         return Play(spotify)
     elif(command == getCommandName("ADD_TO_QUEUE_COMMAND")):
         return AddToQueue(spotify)
-    elif(command == getCommandName("START_SPOTIFY_COMMAND")):
-        return StartSpotify(spotify)
     elif(command == getCommandName("LOGOUT_COMMAND")):
         return Logout(spotify)
     elif(command == getCommandName("LOGIN_COMMAND")):

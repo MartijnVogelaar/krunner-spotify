@@ -1,6 +1,6 @@
 from .Command import Command
 from Config import getCommandName
-from Util import parseSearchQuery
+from Util import parseSearchQuery, parsePage
 from Config import getSetting, getCommandName
 
 
@@ -9,7 +9,7 @@ class Episode(Command):
         super().__init__(getCommandName("EPISODE_COMMAND"), spotify)
 
     def Match(self, query: str):
-        query, page = parseSearchQuery(query)
+        page = int(parsePage(query))
         episodeOffset = int(getSetting("MAX_RESULTS")) * (page - 1)
         playbackDetails = self.spotify.currently_playing(
             additional_types="episode")

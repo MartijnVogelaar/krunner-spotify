@@ -40,8 +40,6 @@ class Runner(dbus.service.Object):
         except RuntimeError as e:
             if(str(e) == "Not logged in!"):
                 return [(getCommandName("LOGIN_COMMAND"), "Not logged in, click to login", "Spotify", 100, 100, {})]
-            elif(str(e) == "No playback device available!"):
-                return [(getCommandName("START_SPOTIFY_COMMAND"), "No playback device available, click to open Spotify!", "Spotify", 100, 100, {})]
 
     @dbus.service.method(iface, in_signature="ss")
     def Run(self, data: str, action_id: str):
