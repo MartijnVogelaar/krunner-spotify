@@ -307,9 +307,6 @@ Seek 01:01:40
 ## **Shuffle**
 The `Shuffle` command can be used to toggle shuffling of songs.
 
-## **Start Spotify**
-The `Spotify` command can be used to start Spotify in your default browser.
-<br><br>
 
 ## **TrackInfo**
 The `TrackInfo` command can be used to retrieve information about the current track playing. The info being shown

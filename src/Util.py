@@ -13,6 +13,13 @@ def parseSearchQuery(query):
         page = int(result[1][1:])
         return result[0], page
 
+def parsePage(query):
+    query = query.lstrip(" ")
+    page = 1
+    if (query == ""):
+        return page
+    m = re.search('p(\d+)', query)
+    return m.group(1)
 
 def parseArtists(results):
     parsedResults = []

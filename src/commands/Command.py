@@ -9,9 +9,7 @@ class Command(ABC):
         self.command = command
         if(not os.path.isfile(getSetting("CACHE_PATH"))):
             raise RuntimeError("Not logged in!")
-        if(not self.spotify.current_playback()):
-            raise RuntimeError("No playback device available!")
-
+        
     def Match(self, query: str):
         pass
 

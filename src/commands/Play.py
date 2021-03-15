@@ -11,6 +11,9 @@ from .Episode import Episode
 from .TopArtist import TopArtist
 from Config import getCommandName, getSetting
 
+import webbrowser
+import re
+import time
 
 class Play(Command):
     def __init__(self, spotify):
@@ -34,7 +37,23 @@ class Play(Command):
             return [("", "Invalid command", "Spotify", 100, 100, {})]
 
     def Run(self, data: str):
-        if("track" in data or "episode" in data):
+        if(not self.spotify.current_playback()):
+            # Spotify  only supports uris to be autoplayed if it is a track. Other source such as:
+            # Podcasts, Albums, Artists and Playlists cannot be outplayed at this point in time.
+            # As we want these source to be autoplayed the following workaround has been made:
+            # We first start a "bank" track without sound, we then wait untill the device is playing".
+            # When the device is playing we play the actual "wanted" source which now plays automatically.
+            
+            webbrowser.open("https://open.spotify.com/track/1KMgqD5AFo1hCjEpv50LwR?si=768a514adc444958")
+            hasToEndBy = time.time() + 5
+            while(not self.spotify.current_playback() ):
+                time.sleep(0.1)
+                if(time.time() > hasToEndBy):
+                    raise RuntimeError("Playback device not started in the specified time.")
+                    print("test")
+                    return
+            self.Run(data)
+        elif("track" in data or "episode" in data):
             self.spotify.start_playback(uris=[data])
         elif("show" in data or "artist" in data or "playlist" in data):
             self.spotify.start_playback(context_uri=data)
