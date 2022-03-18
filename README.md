@@ -46,7 +46,7 @@ The KRunner-Spotify plugin has a wide range of functionalities including:
 
 
 ## Usage
-See `USAGE.md` for an extensive guide.
+See [`USAGE.md`](USAGE.md) for an extensive guide.
 
 ## Future implementations:
 * Control your own playlists
@@ -60,7 +60,7 @@ See `USAGE.md` for an extensive guide.
 
 
 ## License
-Distributed under the GPL-3.0 License. See `LICENSE` for more information.
+Distributed under the GPL-3.0 License. See [`LICENSE`](LICENSE) for more information.
 
 
 ## Contact
