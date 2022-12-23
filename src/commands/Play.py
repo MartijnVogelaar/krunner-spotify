@@ -39,7 +39,10 @@ class Play(Command):
     def Run(self, data: str):
         if(not self.spotify.current_playback()):
             data = data.split(':')
-            webbrowser.open("https://open.spotify.com/track/" + data[2])
+            if data[1] == "playlist":
+                webbrowser.open("https://open.spotify.com/playlist/" + data[2])
+            else:
+                webbrowser.open("https://open.spotify.com/track/" + data[2])
         elif("track" in data or "episode" in data):
             self.spotify.start_playback(uris=[data])
         elif("show" in data or "artist" in data or "playlist" in data):
